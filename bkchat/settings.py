@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/rooms/'
+LOGIN_URL = '/login/'
+
 
 # Application definition
 
@@ -39,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "channels",
     "core",
+    "room",
 ]
 
 MIDDLEWARE = [
@@ -70,7 +75,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "bkchat.wsgi.application"
-
+ASGI_APPLICATION = "bkchat.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
